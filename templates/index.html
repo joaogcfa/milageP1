@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+
+{% block head %}
+
+{% endblock %}
+
+{% block body %}
+<div style="width: 40%; margin: 0 auto;">
+    <h1>Carros</h1>
+
+    <table>
+        <tr>
+            <th>Modelo</th>
+            <th>Motor</th>
+            <th>Marca</th>
+            <th>Ano</th>
+            <th>Preco</th>
+        </tr>
+        {% for carro in carros %}
+            <tr>
+                {% for especificacao in carro %}
+                    {% if especificacao == 'modelo' %}
+                        <td style="padding-left: 10px;padding-right: 10px;">{{ carro[especificacao]}}</td>
+                    {% endif %}
+                    {% if especificacao == 'motor' %}
+                        <td style="padding-left: 10px;padding-right: 10px;">{{ carro[especificacao]}}</td>
+                    {% endif %}
+                    {% if especificacao == 'marca' %}
+                        <td style="padding-left: 10px;padding-right: 10px;">{{ carro[especificacao]}}</td>
+                    {% endif %}
+                    {% if especificacao == 'ano' %}
+                        <td style="padding-left: 10px;padding-right: 10px;">{{ carro[especificacao]}}</td>
+                    {% endif %}
+                    {% if especificacao == 'preco' %}
+                        <td style="padding-left: 10px;padding-right: 10px;">{{ carro[especificacao]}}</td>
+                    {% endif %}
+                {% endfor %}
+            </tr>
+        {% endfor %}
+    </table>
+
+</div>
+{% endblock %}
